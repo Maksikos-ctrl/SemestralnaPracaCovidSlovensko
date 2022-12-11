@@ -26,7 +26,7 @@ Elaboration and defense of semester work - 15b
 
 % import data from github repo
 
-data = readtable("https://raw.githubusercontent.com/Institut-Zdravotnych-Analyz/covid19-data/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.csv");
+data = readtable("https://raw.githubusercontent.com/Institut-Zdravotnych-Analyz/covid19-data/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.csv", "PreserveVariableNames",true);
 
 
 % here, we change our data type string to double, i.e from "NA" to 0
@@ -38,18 +38,19 @@ data.AgTests = str2double(data.AgTests);
 
 % asking our user to choose one of 'em
 
-disp('Typ: \n');
-disp('"1" pre pozitivne PCR testy (vzdy) \n');
-disp('"2" pre PCR testy \n');
-disp('"3" pre pozitivne PCR testy (denne) \n');
-disp('"4" za umrtia (cely cas) \n');
-disp('"5" pre Ag(premerne) testy (denne) \n');
-disp('"6" pre pozitivne Ag(premerne) testy (denne) \n');
-disp('"7" pre hospitalizovaných \n');
-disp('"0" Vystup \n');
+disp('Typ: ');
+disp('"1" pre PCR testy');
+disp('"2" pre pozitivne PCR testy (vzdy)');
+disp('"3" pre pozitivne PCR testy (denne)');
+disp('"4" za umrtia (cely cas)');
+disp('"5" pre Ag(premerne) testy (denne)');
+disp('"6" pre pozitivne Ag(premerne) testy (denne)');
+disp('"7" pre hospitalizovaných');
+disp('"0" Vystup');
 
 
 %if we type smth from keyboard from 0-7 do smth, 1 - enables while loop
+
 while 1
   
     % displays in pop-up to choose graph after instructions above
@@ -57,38 +58,69 @@ while 1
 
     % char = string, nums = double, all unsupported  endtered stuff will change to NaN 
     t = str2double(input(prompt, 's'));
-    disp(t)
+    disp(t);
 
+    
     % if our user has selected on of our above options
-    if (t >= 1 && t <= 7)
-       
-    elseif t == 0
-        disp("Vystup");
-        break;  
-    else 
-        disp("nieco je zle, skuste to znova \n");
-        continue;
-    end
-end   
+    switch (t >= 1 && t <= 7)
+        case 1
+            printGraph(data, t, 0);
+        case 2
+            printGraph(data, t, 0);   
+        case 3
+            printGraph(data, t, 0);
+        case 4
+            printGraph(data, t, 0);    
+        case 5
+            printGraph(data, t, 0);
+        case 6
+            printGraph(data, t, 0);    
+        case 7
+            printGraph(data, t, 0);
+        case 0
+            disp("Vystup");
+            break;   
+        otherwise
+            disp("nieco je zle, skuste to znova \n");
+            continue;     
+    end 
+end
 
-
-function printGraph(data, t, days)
+function [] = printGraph(data, t, days)
     if (days == 0)
         % calling method bar for displaying our graph
         
-        bar(data(:, 1), data());
+        bar(data(:, 1), data(l-days:l, t+1));
+
+    elseif (days == 5 || days == 6) 
+        findMedian(data, t, days);
     else 
         l = length(data(:, 1));
         bar(data(l-days:l, 1), data(l-days:l, t+1))
+
+        
     end
 
 
     % set Y axis format
-
+    % only nums which have type double
     ytickformat("%.0f");
     ax = gca;
     ax.YAxis.Exponent = 0;
-end       
+end   
+
+% fix it
+function [] = findMedian(data, t, days) 
+    l = length(data(:, 1));
+    M = str2double(data.AgTests);
+    bar(data(l-days:l, median(M ,1)), data(l-days:l, t+1))
+
+end
+
+
+
+
+
 
 
 
