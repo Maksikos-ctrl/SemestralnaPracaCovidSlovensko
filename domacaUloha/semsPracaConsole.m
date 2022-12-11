@@ -87,13 +87,15 @@ while 1
 end
 
 function [] = printGraph(data, t, days)
+
+
     if (days == 0)
         % calling method bar for displaying our graph
         
         bar(data(:, 1), data(l-days:l, t+1));
 
     elseif (days == 5 || days == 6) 
-        findMedian(data, t, days);
+        findMedian(data, t, data.Datum);
     else 
         l = length(data(:, 1));
         bar(data(l-days:l, 1), data(l-days:l, t+1))
@@ -110,12 +112,12 @@ function [] = printGraph(data, t, days)
 end   
 
 % fix it
-function [] = findMedian(data, t, days) 
-    l = length(data(:, 1));
-    M = str2double(data.AgTests);
-    bar(data(l-days:l, median(M ,1)), data(l-days:l, t+1))
+function [] = findMedian(data, t, dates)
 
+    disp("Graf zobrazuje %.0f den/dni", dates(2)-dates(1)+1);
+    disp("Median %.3f", median(data{dates(1):dates(2), t+1}));
 end
+
 
 
 
