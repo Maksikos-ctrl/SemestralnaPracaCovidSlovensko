@@ -1,4 +1,4 @@
-# SemestralnaPracaCovid19Slovensko
+# 😷SemestralnaPracaCovid19Slovensko🦠
 
 ## Description
   * Small console app which displays data of recovered, hospitalized and deaths of covid19 in Slovakia for 2020
