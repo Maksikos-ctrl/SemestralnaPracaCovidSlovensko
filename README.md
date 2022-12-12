@@ -5,7 +5,7 @@
   * In this app you are able to see max quantity of tests, recovered, death, etc. Similiar u can do with min
   * The worst and best period of recovered, tests, deatch, etc. 
 
-### What have i used to implement it
+### What i have used to implement it
   <div>
      <img src="https://img.shields.io/badge/matlab-brown.svg?style=for-the-badge&logo=Matlab&logoColor=white">
      <img src="https://img.shields.io/badge/Api-orange.svg?style=for-the-badge&logo=API&logoColor=white"> 
