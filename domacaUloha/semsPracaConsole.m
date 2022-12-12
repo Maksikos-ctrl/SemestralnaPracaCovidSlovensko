@@ -29,6 +29,9 @@ Elaboration and defense of semester work - 15b
 data = readtable("https://raw.githubusercontent.com/Institut-Zdravotnych-Analyz/covid19-data/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.csv", "PreserveVariableNames",true);
 
 
+% here, we change our data tydata = readtable("https://raw.githubusercontent.com/Institut-Zdravotnych-Analyz/covid19-data/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.csv", "PreserveVariableNames", true);
+
+
 % here, we change our data type string to double, i.e from "NA" to 0
 
 data.AgPosit = str2double(data.AgPosit);
@@ -60,63 +63,205 @@ while 1
     t = str2double(input(prompt, 's'));
     disp(t);
 
-    
+   
     % if our user has selected on of our above options
     switch (t >= 1 && t <= 7)
         case 1
-            printGraph(data, t, 0);
+             l = length(data(:, 1));
+
+
+            if (days == 0)
+                % calling method bar for displaying our graph
+                
+                bar(data(:, 1), data(l-days:l, t+1));
+        
+            elseif (days == 5 || days == 6) 
+                findMedian(data, t, data.Datum);
+            else 
+               
+                bar(data(l-days:l, 1), data(l-days:l, t+1))
+        
+                
+            end
+        
+        
+            % set Y axis format
+            % only nums which have type double
+            ytickformat("%.0f");
+            ax = gca;
+            ax.YAxis.Exponent = 0;
+
         case 2
-            printGraph(data, t, 0);   
+             l = length(data(:, 1));
+
+
+            if (days == 0)
+                % calling method bar for displaying our graph
+                
+                bar(data(:, 1), data(l-days:l, t+1));
+        
+            elseif (days == 5 || days == 6) 
+                findMedian(data, t, data.Datum);
+            else 
+               
+                bar(data(l-days:l, 1), data(l-days:l, t+1))
+        
+                
+            end
+
+
+            % set Y axis format
+            % only nums which have type double
+            ytickformat("%.0f");
+            ax = gca;
+            ax.YAxis.Exponent = 0;
+
         case 3
-            printGraph(data, t, 0);
+             l = length(data(:, 1));
+
+
+            if (days == 0)
+                % calling method bar for displaying our graph
+                
+                bar(data(:, 1), data(l-days:l, t+1));
+        
+            elseif (days == 5 || days == 6) 
+                findMedian(data, t, data.Datum);
+            else 
+               
+                bar(data(l-days:l, 1), data(l-days:l, t+1))
+        
+                
+            end
+
+
+            % set Y axis format
+            % only nums which have type double
+            ytickformat("%.0f");
+            ax = gca;
+            ax.YAxis.Exponent = 0;
+
         case 4
-            printGraph(data, t, 0);    
+             l = length(data(:, 1));
+
+
+        if (days == 0)
+            % calling method bar for displaying our graph
+            
+            bar(data(:, 1), data(l-days:l, t+1));
+    
+        elseif (days == 5 || days == 6) 
+            findMedian(data, t, data.Datum);
+        else 
+           
+            bar(data(l-days:l, 1), data(l-days:l, t+1))
+    
+            
+        end
+
+    
+        % set Y axis format
+        % only nums which have type double
+        ytickformat("%.0f");
+        ax = gca;
+        ax.YAxis.Exponent = 0;
+
         case 5
-            printGraph(data, t, 0);
+             l = length(data(:, 1));
+
+
+            if (days == 0)
+                % calling method bar for displaying our graph
+                
+                bar(data(:, 1), data(l-days:l, t+1));
+        
+            elseif (days == 5 || days == 6) 
+                findMedian(data, t, data.Datum);
+            else 
+               
+                bar(data(l-days:l, 1), data(l-days:l, t+1))
+        
+                
+            end
+        
+        
+            % set Y axis format
+            % only nums which have type double
+            ytickformat("%.0f");
+            ax = gca;
+            ax.YAxis.Exponent = 0;
+
         case 6
-            printGraph(data, t, 0);    
+            l = length(data(:, 1));
+
+
+            if (days == 0)
+                % calling method bar for displaying our graph
+                
+                bar(data(:, 1), data(l-days:l, t+1));
+        
+            elseif (days == 5 || days == 6) 
+                findMedian(data, t, data.Datum);
+            else 
+               
+                bar(data(l-days:l, 1), data(l-days:l, t+1))
+        
+                
+            end
+        
+        
+            % set Y axis format
+            % only nums which have type double
+            ytickformat("%.0f");
+            ax = gca;
+            ax.YAxis.Exponent = 0;
+  
         case 7
-            printGraph(data, t, 0);
+            l = length(data(:, 1));
+
+
+            if (days == 0)
+                % calling method bar for displaying our graph
+                
+                bar(data(:, 1), data(l-days:l, t+1));
+        
+            elseif (days == 5 || days == 6) 
+                findMedian(data, t, data.Datum);
+            else 
+               
+                bar(data(l-days:l, 1), data(l-days:l, t+1))
+        
+                
+            end
+        
+        
+            % set Y axis format
+            % only nums which have type double
+            ytickformat("%.0f");
+            ax = gca;
+            ax.YAxis.Exponent = 0;
+
         case 0
             disp("Vystup");
             break;   
         otherwise
-            disp("nieco je zle, skuste to znova \n");
+            disp("nieco je zle, skuste to znova");
             continue;     
     end 
 end
 
-function [] = printGraph(data, t, days)
 
-
-    if (days == 0)
-        % calling method bar for displaying our graph
-        
-        bar(data(:, 1), data(l-days:l, t+1));
-
-    elseif (days == 5 || days == 6) 
-        findMedian(data, t, data.Datum);
-    else 
-        l = length(data(:, 1));
-        bar(data(l-days:l, 1), data(l-days:l, t+1))
-
-        
-    end
-
-
-    % set Y axis format
-    % only nums which have type double
-    ytickformat("%.0f");
-    ax = gca;
-    ax.YAxis.Exponent = 0;
-end   
 
 % fix it
-function [] = findMedian(data, t, dates)
+function findMedian(data, t, dates)
 
     disp("Graf zobrazuje %.0f den/dni", dates(2)-dates(1)+1);
-    disp("Median %.3f", median(data{dates(1):dates(2), t+1}));
-end
+    disp("Median %.3f", plot(median(data{dates(1):dates(2), t+1})));
+end    
+
+
+
+
 
 
 
