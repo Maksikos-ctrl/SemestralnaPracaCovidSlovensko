@@ -1,7 +1,7 @@
 # 😷SemestralnaPracaCovid19Slovensko🦠
 
 ## Description
-  * Small console app which displays data of recovered, hospitalized and deaths of covid19 in Slovakia for 2020
+  * Small console app which displays data of recovered, hospitalized and deaths of covid19 in Slovakia for 2020-current
   * In this app you are able to see max quantity of tests, recovered, death, etc. Similiar u can do with min
   * The worst and best period of recovered, tests, deatch, etc. 
 
