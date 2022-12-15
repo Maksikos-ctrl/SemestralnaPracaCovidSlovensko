@@ -1,7 +1,7 @@
 # 😷SemestralnaPracaCovid19Slovensko🦠
 
 ## How it works
-- Well, my Semestralka contains 5 files, including table with dates and stats from [API](OpenData_Slovakia_Covid_DailyStats.csv)
+- Well, my Semestralka contains 5 files, including table with dates and stats from [API](https://github.com/Institut-Zdravotnych-Analyz/covid19-data)
 - First file (and the main one) - index.m. it consists the main functions and runs the whole app. Here is used function switch that allows user to choose exactly what he wants and then it shows the result. It is also responsable for reading the table (.csv) and calling other function from other files.
 - Second file - valOfAns.m. This file was made in order to create some kinda graphical component of the code so that the application would be comfortable to use. Also, the purpose of that file was to leave the index.m as clean as it is now, without unnecessary text.
 - Third file - switchFunc. This file contains the opening process of the table and then, using switch operator, giving each coloumn a specific number that used in index.m.
