@@ -14,11 +14,11 @@ Selectsort.
 
 Majú jednoduchú myšlienku, sú pomerne ľahko naprogramovateľné.
 -Nevyžadujú pomocné dátové štruktúry a pomocnú pamäť.
-- Sú vhodné najmä pre dáta a zoznamy s menším počtom prvkov.
-- Pri väčších zoznamoch majúcich nad 1000 prvkov už nie sú vhodné,
-pretože čas rastie rádovo kvadraticky.
+- Sú vhodné najmä pre dáta a zoznamy s menším poĝtom prvkov.
+- Pri väĝších zoznamoch majúcich nad 1000 prvkov už nie sú vhodné,
+pretože ĝas rastie rádovo kvadraticky.
 
-%* Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
+%* Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. vals from the unsorted part are picked and placed at the correct position in the sorted part.
 
 %}
 
@@ -37,29 +37,29 @@ Porovnáva každý prvok zoznamu s
 
 nasledujúcim a ak je to potrebné, navzájom
 
-ich vymení. Tento proces pokračuje
+ich vymení. Tento proces pokraĝuje
 
 dovtedy, dokiaľ po prejdení poľa bol
 
 vymenený aspoň jeden prvok. Ak už
 
-nebolo vymenené nič, algoritmus končí.
+nebolo vymenené niĝ, algoritmus konĝí.
 
- Ľavá časť poľa je neutriedená, pravá
+ Ľavá ĝasť poľa je neutriedená, pravá
 
 utriedená. Postupne prebiehame
 
-neutriedenou časťou poľa od začiatku do
+neutriedenou ĝasťou poľa od zaĝiatku do
 
-konca. Ak sa stane, že prvok väčšej hodnoty
+konca. Ak sa stane, že prvok väĝšej hodnoty
 
 sa nachádza pred prvkom nižšej hodnoty,
 
 vymeníme tieto prvky. Takto sa ľavá
 
-neutriedená časť každým krokom zmenší o
+neutriedená ĝasť každým krokom zmenší o
 
-jeden prvok. Máme istotu, že vždy najväčší
+jeden prvok. Máme istotu, že vždy najväĝší
 
 prvok v n
 
@@ -92,13 +92,13 @@ end
 
 %{
     
-Selectsort vyberá vždy neutriedený prvok
-
+Selectsovok
+rt vyberá vždy neutriedený pr
 najnižšej hodnoty a vloží ho na koniec
 
-utriedeného zoznamu. Algoritmus končí
+utriedeného zoznamu. Algoritmus konĝí
 
-vtedy, keď sú všetky prvky usporiadané. 
+vtedy, keĝ sú všetky prvky usporiadané. 
 
 
 %}
@@ -133,11 +133,11 @@ end
 Heapsort.
 
 
-%! Aj táto skupina má svoje špecifické vlastnosti. Všetko ide o časovo
-rýchlejšie algoritmy. Myšlienka je u väčšiny algoritmov zložitejšia,
-pretože mnohé vyžadujú rekurziu alebo znalosť pokročilých dátových
+%! Aj táto skupina má svoje špecifické vlastnosti. Všetko ide o ĝasovo
+rýchlejšie algoritmy. Myšlienka je u väĝšiny algoritmov zložitejšia,
+pretože mnohé vyžadujú rekurziu alebo znalosť pokroĝilých dátových
 štruktúr. Sú naprogramovateľné ťažšie, než v prípade predošlej
-skupiny. Pracujú veľmi rýchlo a odporúčajú sa na triedenia veľkých
+skupiny. Pracujú veľmi rýchlo a odporúĝajú sa na triedenia veľkých
 zoznamov.
 
 
