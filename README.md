@@ -1,4 +1,4 @@
-# SemestralnaPracaCovid19Slovensko
+# 😷SemestralnaPracaCovid19Slovensko🦠
 
 ## How it works
 - Well, my Semestralka contains 5 files, including table with dates and stats from [API](OpenData_Slovakia_Covid_DailyStats.csv)
@@ -11,11 +11,11 @@
  
 
 ## Description
-  * Small console app which displays data of recovered, hospitalized and deaths of covid19 in Slovakia for 2020
+  * Small console app which displays data of recovered, hospitalized and deaths of covid19 in Slovakia for 2020-current
   * In this app you are able to see max quantity of tests, recovered, death, etc. Similiar u can do with min
   * The worst and best period of recovered, tests, deatch, etc. 
 
-### What have i used to implement it
+### What i have used to implement it
   <div>
      <img src="https://img.shields.io/badge/matlab-brown.svg?style=for-the-badge&logo=Matlab&logoColor=white">
      <img src="https://img.shields.io/badge/Api-orange.svg?style=for-the-badge&logo=API&logoColor=white"> 
