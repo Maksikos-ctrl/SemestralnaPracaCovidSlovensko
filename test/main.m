@@ -1,6 +1,6 @@
 % function [zoznam vystupnych parametrov] = menoFunkcie(zoznam vstupnych parametrov)
 
-% prvy prípad
+% prvy prï¿½pad
 
 function [] = myFunc()
     for i=1:10
@@ -8,7 +8,7 @@ function [] = myFunc()
     end
 end      
 
-% druhy prípad
+% druhy prï¿½pad
 
 function [] = myFunc1(n)
     for i=1:n
@@ -16,7 +16,7 @@ function [] = myFunc1(n)
     end
 end
 
-% tretí prípad
+% tretï¿½ prï¿½pad
 
 
 function [sucet] = zrataj(a, b)
@@ -32,18 +32,18 @@ end
 
 c = {pi, 'Cao', zrataj(2, 3); 3 'C' 7};
 
-% Alebo, Syntax príkazu cell:
+% Alebo, Syntax prï¿½kazu cell:
 
-%Nazov_premennej = cell (m,n,p...) – vytvára m x n x p x ... pole
+%Nazov_premennej = cell (m,n,p...) ï¿½ vytvï¿½ra m x n x p x ... pole
 
 c = cell(pi, 'Cao', sin(x), cos(x));
 
-%buniek prázdnych matíc. Argumenty m, n, p ... musia
-%by? skaláry.%
+%buniek prï¿½zdnych matï¿½c. Argumenty m, n, p ... musia
+%by? skalï¿½ry.%
 
 
-%Struct -  Štruktúra je zvláštny dátový útvar, ktorý v sebe definuje pole
-%premenných rôzneho typu
+%Struct -  ï¿½truktï¿½ra je zvlï¿½tend_date dï¿½tovï¿½end_datetvar, ktorï¿½ v sebe definuje pole
+%premennï¿½ch rï¿½zneho typu
 
 % priklad => Nazov_struktury = struct ('polozka1', 'hodnota1', 'polozka2', 'hodnota2'...
 

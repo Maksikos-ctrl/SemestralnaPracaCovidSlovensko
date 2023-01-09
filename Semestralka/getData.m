@@ -1,9 +1,11 @@
-function [from,to] = getData(from,to,date)
+function [start_date,end_date] = getData(start_date,end_date,date)
     for i=1:length(date)
-        if (string(date(i)) == string(from))
-            from = i;
-        elseif (string(date(i)) == string(to))
-            to = i;
+        if (string(date(i)) == string(start_date))
+            start_date = i;
+        elseif (string(date(i)) == string(end_date))
+            end_date = i;
         end
     end
 end
+
+

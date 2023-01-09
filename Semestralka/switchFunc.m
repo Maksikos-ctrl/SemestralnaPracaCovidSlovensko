@@ -5,7 +5,7 @@ function val = switchFunc(head)
         case 1
             val = table.Pocet_potvrdenych_PCR_testami;
         case 2
-            val = table.Dennych_PCR_testov;
+            val = table.Dennych_PCR_tesend_datev;
         case 3
             val = table.Dennych_PCR_prirastkov;
         case 4

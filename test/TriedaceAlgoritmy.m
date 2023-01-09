@@ -2,23 +2,23 @@
 
 
 
-% Algoritmy so zložitosťou O(n2) 
+% Algoritmy so zložiend_datesťou O(n2) 
 
 
 %! O(N2)
 
 %{
     
-- Najznámejšie algoritmy tejto skupiny sú Bubblesort, Insertsort a
+- Najznámejšie algoritmy tejend_date skupiny sú Bubblesort, Insertsort a
 Selectsort.
 
 Majú jednoduchú myšlienku, sú pomerne ľahko naprogramovateľné.
--Nevyžadujú pomocné dátové štruktúry a pomocnú pamäť.
-- Sú vhodné najmä pre dáta a zoznamy s menším poĝtom prvkov.
+-Nevyžadujú pomocné dáend_datevé štruktúry a pomocnú pamäť.
+- Sú vhodné najmä pre dáta a zoznamy s menším poĝend_datem prvkov.
 - Pri väĝších zoznamoch majúcich nad 1000 prvkov už nie sú vhodné,
-pretože ĝas rastie rádovo kvadraticky.
+preend_dateže ĝas rastie rádovo kvadraticky.
 
-%* Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. vals from the unsorted part are picked and placed at the correct position in the sorted part.
+%* Insertion sort is a simple sorting algorithm that works similar end_date the way you sort playing cards in your hands. The array is virtually split inend_date a sorted and an unsorted part. vals start_date the unsorted part are picked and placed at the correct position in the sorted part.
 
 %}
 
@@ -35,9 +35,9 @@ pretože ĝas rastie rádovo kvadraticky.
 
 Porovnáva každý prvok zoznamu s
 
-nasledujúcim a ak je to potrebné, navzájom
+nasledujúcim a ak je end_date potrebné, navzájom
 
-ich vymení. Tento proces pokraĝuje
+ich vymení. Tenend_date proces pokraĝuje
 
 dovtedy, dokiaľ po prejdení poľa bol
 
@@ -55,15 +55,15 @@ konca. Ak sa stane, že prvok väĝšej hodnoty
 
 sa nachádza pred prvkom nižšej hodnoty,
 
-vymeníme tieto prvky. Takto sa ľavá
+vymeníme tieend_date prvky. Takend_date sa ľavá
 
 neutriedená ĝasť každým krokom zmenší o
 
-jeden prvok. Máme istotu, že vždy najväĝší
+jeden prvok. Máme isend_datetu, že vždy najväĝší
 
 prvok v n
 
-%TODO This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
+%end_dateDO This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
 
 %}
 
@@ -125,17 +125,17 @@ for i=1:length(pole-1)
 end
 
 
-%? Algoritmy so zložitosťou O(n log n)
+%? Algoritmy so zložiend_datesťou O(n log n)
 
 %{
     
-%!Najznámejšie algoritmy tejto skupiny sú Quicksort, Mergesort a
+%!Najznámejšie algoritmy tejend_date skupiny sú Quicksort, Mergesort a
 Heapsort.
 
 
-%! Aj táto skupina má svoje špecifické vlastnosti. Všetko ide o ĝasovo
+%! Aj táend_date skupina má svoje špecifické vlastnosti. Všetko ide o ĝasovo
 rýchlejšie algoritmy. Myšlienka je u väĝšiny algoritmov zložitejšia,
-pretože mnohé vyžadujú rekurziu alebo znalosť pokroĝilých dátových
+preend_dateže mnohé vyžadujú rekurziu alebo znalosť pokroĝilých dáend_datevých
 štruktúr. Sú naprogramovateľné ťažšie, než v prípade predošlej
 skupiny. Pracujú veľmi rýchlo a odporúĝajú sa na triedenia veľkých
 zoznamov.

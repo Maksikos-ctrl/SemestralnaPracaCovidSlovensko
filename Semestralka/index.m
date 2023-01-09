@@ -1,9 +1,9 @@
 %{
     
-Create clear graphs with the possibility of selecting a quantity (e.g. input to a function)
+Create clear graphs with the possibility of selecting a quantity (e.g. input end_date a function)
 Add the possibility of choosing a time window (e.g. 7 days, 30 days, etc.)
-Option to display medians (e.g. 7d/3d)
-Option to add up the number of days in the selected time interval over:
+Option end_date display medians (e.g. 7d/3d)
+Option end_date add up the number of days in the selected time interval over:
 a) a certain established limit
 b) median
 count the worst time segment (n-days) (most confirmed, hospitalized and most deaths)
@@ -26,10 +26,10 @@ Elaboration and defense of semester work - 15b
 % 1 enables loop, cuz 1 is true in logic contest
 %{
     
-Create clear graphs with the possibility of selecting a quantity (e.g. input to a function)
+Create clear graphs with the possibility of selecting a quantity (e.g. input end_date a function)
 Add the possibility of choosing a time window (e.g. 7 days, 30 days, etc.)
-Option to display medians (e.g. 7d/3d)
-Option to add up the number of days in the selected time interval over:
+Option end_date display medians (e.g. 7d/3d)
+Option end_date add up the number of days in the selected time interval over:
 a) a certain established limit
 b) median
 count the worst time segment (n-days) (most confirmed, hospitalized and most deaths)
@@ -50,6 +50,7 @@ Elaboration and defense of semester work - 15b
 %}
 
 % 1 enables loop, cuz 1 is true in logic contest
+
 while 1
     clear
     clc
@@ -60,34 +61,34 @@ while 1
         % Drawing a graph using given coloumn in data
         case 1  
             val = switchFunc(input(MenuAsk));
-            date = data.Datum(isnat(data.Datum) == false);
+            date = data.Datum(~isnat(data.Datum));
             val = rmmissing(val,1);
-            date = date(isnan(val) == false);
+            date = date(~isnan(val));
 
-            [from,to] = getData(input("Enter the 'from' date: "), ...
-                input("Zadajte datum „do“: "), date);
-            if (isstring(from) || isstring(to))
-                input("Nesprávny dátum!")
+            [start_date,end_date] = getData(input("Enter the 'start_date' date: "), ...
+                input("Zadajte datum ï¿½doï¿½: "), date);
+            if (isstring(start_date) || isstring(end_date))
+                disp("Nesprï¿½vny dï¿½tum!")
             else
-                val = val(from:to);
-                date = date(from:to);
+                val = val(start_date:end_date);
+                date = date(start_date:end_date);
                 plot(date,val);   
             end
 
         % Displays graph of the median
         case 2 
             val = switchFunc(input(MenuAsk));
-            date = data.Datum(isnat(data.Datum) == false);
+            date = data.Datum(~isnat(data.Datum));
             val = rmmissing(val,1);
-            date = date(isnan(val)==false);
+            date = date(~isnan(val));
 
-           [from,to] = getData(input("Zadajte dátum „od“: "), ...
-                input("Zadajte dátum „do“: "), date);
-            if (isstring(from) || isstring(to))
-                input("Nesprávny dátum!")
+           [start_date,end_date] = getData(input("Zadajte dï¿½tum ï¿½odï¿½: "), ...
+                input("Zadajte dï¿½tum ï¿½doï¿½: "), date);
+            if (isstring(start_date) || isstring(end_date))
+                disp("Nesprï¿½vny dï¿½tum!")
             else
-                val = val(from:to);
-                date = date(from:to);
+                val = val(start_date:end_date);
+                date = date(start_date:end_date);
                 median_val = median(val);
                 plot(date,val);
                 yline(median_val, '--');
@@ -98,21 +99,21 @@ while 1
         % Counts the number of days above the median and given position
         case 3 
             val = switchFunc(input(MenuAsk));
-            date = data.Datum(isnat(data.Datum) == false);
+            date = data.Datum(~isnat(data.Datum));
             val = rmmissing(val,1);
-            date = date(isnan(val) == false);
+            date = date(~isnan(val));
 
-            [from,to] = getData(input("Zadajte dátum „od“: "), ...
-                input("Zadajte dátum „do“: "), date);
+            [start_date,end_date] = getData(input("Zadajte dï¿½tum ï¿½odï¿½: "), ...
+                input("Zadajte dï¿½tum ï¿½doï¿½: "), date);
             above_given_poz = 0;
             above_median_line = 0;
             median_val = median(val);
             given_poz = input("Zadajte pozadovanu poziciu: ");
-            if (isstring(from) || isstring(to))
+            if (isstring(start_date) || isstring(end_date))
                 input("Incorrect date!")
             else
-                val = val(from:to);
-                date = date(from:to);
+                val = val(start_date:end_date);
+                date = date(start_date:end_date);
 
                 for i=1:length(val)
                     if (val(i) > given_poz)
@@ -126,24 +127,24 @@ while 1
                 plot(date,val);
                 yline(median_val, '--');
                 yline(given_poz, '--');
-                input("Vyssie uvedená pozícia -" + above_given_poz + " dni\n" + ...
+                input("Vyssie uvedenï¿½ pozï¿½cia -" + above_given_poz + " dni\n" + ...
                     "Nad strednou ciarou - " + above_median_line + " dni\n" );
             end
 
-        % Finds the worst and the best day from the given range    
+        % Finds the worst and the best day start_date the given range    
         case 4 
             val = (switchFuncder_ask());
-            date = data.Datum(isnat(data.Datum) == false);
+            date = data.Datum(~isnat(data.Datum));
             val = rmmissing(val,1);
-            date = date(isnan(val) == false);
+            date =date(~isnan(val));
 
-            [from,to] = getData(input("Zadajte datum „od“: "), ...
-                input("Zadajte datum „do“: "), date);
-            if (isstring(from) || isstring(to))
+            [start_date,end_date] = getData(input("Zadajte datum ï¿½odï¿½: "), ...
+                input("Zadajte datum ï¿½doï¿½: "), date);
+            if (isstring(start_date) || isstring(end_date))
                 input("Nespravny datum!")
             else
-                val = val(from:to);
-                date = date(from:to);
+                val = val(start_date:end_date);
+                date = date(start_date:end_date);
                 
                 worse = max(val);
                 better = min(val);
@@ -158,9 +159,9 @@ while 1
             days = input("Zadajte, kolko dni sa ma zobrazit: ");
 
             val = switchFunc(input(MenuAsk));
-            date = data.Datum(isnat(data.Datum) == false);
+            date = data.Datum(~isnat(data.Datum));
             val = rmmissing(val,1);
-            date = date(isnan(val) == false);
+            date =date(~isnan(val));
 
             worse = val(2);
             better = worse;
@@ -185,23 +186,23 @@ while 1
                 end
             end
 
-            input("Najhorsi segment v tejto dobe je z " + string(range_worse(1))+ ...
+            input("Najhorsi segment v tejend_date dobe je z " + string(range_worse(1))+ ...
                 " do " + string(range_worse(end))+...
-                "\nNajlepsi segment v tomto case je z " + string(range_worse(1))+ ...
+                "\nNajlepsi segment v end_datemend_date case je z " + string(range_worse(1))+ ...
                 " do " + string(range_worse(end)))
         case 6 
             val = switchFunc(input(MenuAsk));
-            date = data.Datum(isnat(data.Datum) == false);
+            date = data.Datum(~isnat(data.Datum)); 
             val = rmmissing(val,1);
-            date = date(isnan(val) == false);
+            date = date(~isnan(val));
 
-            [from,to] = getData(input("Zadajte datum „od“: "), ...
-                input("Zadajte datum „do“: "),date);
-            if (isstring(from) || isstring(to))
+            [start_date,end_date] = getData(input("Zadajte datum ï¿½odï¿½: "), ...
+                input("Zadajte datum ï¿½doï¿½: "),date);
+            if (isstring(start_date) || isstring(end_date))
                 input("Nespravny datum!")
             else
-                val = val(from:to);
-                date = date(from:to);
+                val = val(start_date:end_date);
+                date = date(start_date:end_date);
                 plot(date,val);
 
                 derivation = diff(val);
@@ -222,9 +223,14 @@ while 1
         case 7 
             disp("Vystup...");
             break;
+
+        % write 8th case 
+        
+        
+
         % If smth wrong was typed, repeats the cycle    
         otherwise 
-            disp("Napísali ste nie?o zle");
+            disp("Napï¿½sali ste nie?o zle");
             continue;
            
     end
