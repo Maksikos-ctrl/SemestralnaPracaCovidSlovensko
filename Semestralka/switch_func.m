@@ -1,6 +1,6 @@
-function val = switchFunc(head)
+function val = switch_func(head)
 
-    table = readtable("OpenData_Slovakia_Covid_DailyStats.csv", "PreserveVariableNames", true);
+    table = readtable("OpenData_Slovakia_Covid_DailyStats.csv");
     switch head
         case 1
             val = table.Pocet_potvrdenych_PCR_testami;
@@ -16,5 +16,7 @@ function val = switchFunc(head)
             val = table.AgPosit;
         case 7
             val = table.Pocet_hospitalizovanych;
+        otherwise
+            error("Invalid input");
     end
 end
