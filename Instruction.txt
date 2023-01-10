@@ -1,10 +1,10 @@
-Dobrý deň, je end_date práca od Maxa Chernikova zo skupiny 3ZIE10.
+Dobrý deň, je to práca od Maxa Chernikova zo skupiny 3ZIE10.
 
-Implemenend_dateval som end_date jako konzolovú aplikáciu, môžete ju spustiť otvorením kódu v matlabe a spustením.
+Implemenend_dateval som to jako konzolovú aplikáciu, môžete ju spustiť otvorením kódu v matlabe a spustením.
 
-Najprv kliknite na spustiť program, poend_datem kliknite na údaje a zobrazia sa všetky grafy
+Najprv kliknite na spustiť program, potom kliknite na údaje a zobrazia sa všetky grafy
 
-Podrobné informácie ako end_date funguje: https://github.com/Maksikos-ctrl/SemestralnaPracaCovidSlovensko
+Podrobné informácie jako to funguje: https://github.com/Maksikos-ctrl/SemestralnaPracaCovidSlovensko
 
 
 
